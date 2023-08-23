@@ -5,7 +5,11 @@ import CityItem from "./CityItem";
 import Spinner from "./Spinner";
 import Message from "./Message";
 
-function CityList({ cities, isLoading }) {
+import { useCities } from "../contexts/CityContext";
+
+function CityList() {
+  const { cities, isLoading } = useCities();
+  console.log(cities);
   if (isLoading) {
     return <Spinner />;
   }
